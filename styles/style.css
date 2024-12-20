@@ -32,7 +32,7 @@ body {
 .page {
   min-inline-size: 320px;
   font-family: var(--main-text-font);
-  font-variation-settings: var(--main-card-text-weight); /*под вопросом. так указано в ТЗ*/
+  font-variation-settings: 'wght' var(--main-card-text-weight); /*под вопросом. так указано в ТЗ*/
   background-image: var(--bg-gradient);
   background-color: var(--bg-color);
   background-size: 4px 4px, 4px 4px, cover;
@@ -55,7 +55,7 @@ body {
 }
 
 @media (width <= 376px) {
-  .header{
+  .header {
     padding: 120px 0;
   }
 }
@@ -69,7 +69,7 @@ body {
   font-size: clamp(0.875rem, 0.226rem + 2.7692vw, 1.4375rem);
 }
 
-.content {  
+.content {
   display: grid;
   gap: 50px;
   max-inline-size: 700px;
@@ -232,7 +232,7 @@ body {
   mix-blend-mode: difference;
 }
 
-.heart.is-liked .button__text{
+.heart.is-liked .button__text {
   position: relative;
   z-index: 10;
   text-align: center;
