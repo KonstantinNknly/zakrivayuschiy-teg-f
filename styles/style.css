@@ -10,16 +10,6 @@
 
 */
 
-@supports (font-variation-settings: normal) {
-  body {
-    font-family: Inter-Variable;
-  }
-}
-
-body {
-  font-family: Inter-Variable;
-}
-
 .icon {
   width: 21px;
   height: 21px;
