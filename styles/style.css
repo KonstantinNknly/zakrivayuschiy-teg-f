@@ -32,7 +32,7 @@ body {
 .page {
   min-inline-size: 320px;
   font-family: var(--main-text-font);
-  font-variation-settings: 'wght' var(--main-card-text-weight); /*под вопросом. так указано в ТЗ*/
+  font-variation-settings: 'wght'; /*под вопросом. так указано в ТЗ*/
   background-image: var(--bg-gradient);
   background-color: var(--bg-color);
   background-size: 4px 4px, 4px 4px, cover;
