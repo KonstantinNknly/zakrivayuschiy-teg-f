@@ -13,16 +13,35 @@
 .icon {
   width: 21px;
   height: 21px;
+  color: #fff;
+  position: relative;
+  z-index: 2;
+  mix-blend-mode: difference;
+}
+
+@media (width <= 376px) {
+  .icon {
+      width: 31px;
+      height: 30px;
+  }
 }
 
 .icon-big {
-  width: 80px;
+  width: 81px;
+  height: 81px;
+}
+
+@media (width <= 376px) {
+  .icon-big {
+      width: 90px;
+      height: 39px;
+  }
 }
 
 .page {
   min-inline-size: 320px;
   font-family: var(--main-text-font);
-  font-variation-settings: 'wght' 400 700;
+  font-variation-settings: "wght" 700;
   background-image: var(--bg-gradient);
   background-color: var(--bg-color);
   background-size: 4px 4px, 4px 4px, cover;
@@ -46,7 +65,7 @@
 
 @media (width <= 376px) {
   .header {
-    padding: 120px 0;
+      padding: 120px 0;
   }
 }
 
@@ -65,7 +84,7 @@
   max-inline-size: 700px;
   margin-inline: auto;
 }
-  
+
 .content_section {
   background-color: var(--bg-color);
   border: 2px solid var(--border-color);
@@ -90,6 +109,7 @@
   padding: 25px 25px 0px;
   border: 2px solid var(--border-color);
   border-bottom: none;
+  font-variation-settings: "wght" 400;
 }
 
 .content_section-img {
@@ -97,11 +117,13 @@
   justify-content: flex-end;
   position: relative;
   aspect-ratio: 1/1;
-  border: 2px solid var(--border-color)
+  border: 2px solid var(--border-color);
 }
 
 .watermark {
   position: absolute;
+  top: 25px;
+  right: 25px;
   z-index: 1;
   font-size: 14px;
   mix-blend-mode: hard-light;
@@ -109,19 +131,19 @@
   text-shadow: var(--text-shadow);
   opacity: 50%;
   color: #000;
-  padding: 26px 25px;
 }
 
-@supports((text-stroke: var(--text-shadow)) or (-webkit-text-stroke: var(--text-shadow))) {
+@supports ((text-stroke: var(--text-shadow)) or (-webkit-text-stroke: var(--text-shadow))) {
   .watermark {
-    -webkit-text-stroke: var(--text-shadow);
-    text-shadow: var(--text-shadow);
+      -webkit-text-stroke: var(--text-shadow);
+      text-shadow: var(--text-shadow);
   }
 }
 
 @media (width <= 376px) {
   .watermark {
-    padding: 19px 9px;
+      top: 19px;
+      right: 9px;
   }
 }
 
@@ -172,21 +194,24 @@
 .card__icon-button {
   border: none;
   outline: none;
+  background: none;
 }
 
 .button {
   width: 130px;
   height: 40px;
-  border: 2px solid var(--border-color);
+  border: 3px solid var(--border-color);
   color: var(--button-color);
   font-family: var(--accent-text-font);
-  background-color: transparent;
+  background-color: var(--bg-color);
   position: relative;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 14px;
+  appearance: none;
+  transition: box-shadow 0.5s ease-in-out, transform 0.3s;
 }
 
 .button:after {
@@ -199,12 +224,21 @@
   transition: transform 0.5s ease-in-out;
 }
 
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  box-shadow: 2px 2px 0 #000;
+}
+
 .button:hover:after {
   transform: scaleX(1);
 }
 
 .card__like-button {
-  transition: box-shadow 0.5s ease-in-out;
+  width: 130px;
+  height: 40px;
 }
 
 .card__like-button:focus {
@@ -236,35 +270,28 @@
 .footer {
   display: flex;
   justify-content: center;
+  padding-bottom: 103px;
 }
 
 .footer-button {
   width: 335px;
   height: 55px;
-  border: 2px solid var(--border-color);
-  font-family: var(--accent-text-font);
-  position: relative;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
   gap: 8px;
 }
 
 @media (width <= 376px) {
   .footer-button {
-    width: 305px;
-    height: 84px;
-    display: flex;
-    flex-direction: column;
+      width: 305px;
+      height: 84px;
+      display: flex;
+      flex-direction: column;
   }
 }
 
 .dialog {
   max-inline-size: 353px;
-  padding: 30px;
-  border: 2px solid var(--border-color);
+  padding: 32px 42px;
+  border: 3px solid var(--border-color);
 }
 
 .dialog [open] {
@@ -280,6 +307,7 @@
   display: flex;
   gap: 20px;
   padding-bottom: 30px;
+  align-items: center;
 }
 
 .dialog__content-text {
@@ -291,9 +319,11 @@
 
 .dialog__button {
   inline-size: 100%;
-  padding: 12.5px;
-  border: 2px solid var(--border-color);
+  padding: 12.5px 9px;
+  border: 3px solid var(--border-color);
   text-transform: uppercase;
   line-height: 90%;
   cursor: pointer;
+  display: grid;
+  justify-items: center;
 }
