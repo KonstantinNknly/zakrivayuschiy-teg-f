@@ -1,6 +1,6 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
-    --main-text-font: "Inter-Variable", IBM Plex Serif;
+    --main-text-font: "Inter-Variable", Arial;
     --main-card-text-weight: 400;
     --main-heading-text-weight: 700;
     --accent-text-font: "PressStart2P", sans-serif;
